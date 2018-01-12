@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.arch{
+  height: 100px;
+  width: 200px;
+  margin: auto;
+  background-color: black;
+}
+
+.preview-container{
+  width: 50%;
+  padding: 70px;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.answers{
+  display: inline-flex;
+  width: 100%;
+}
+
+.answer-left, .answer-right {
+  width: 50%
+}
