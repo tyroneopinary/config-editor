@@ -44,9 +44,10 @@ class App extends Component {
   }
 
   openPrimary = (event) => {
-    const name = event.target.name
     this.setState({
-      displayColorPicker1: !this.state[name]
+      // displayColorPicker1: !this.state[name]
+      displayColorPicker1: true
+
     })
   }
 

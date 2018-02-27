@@ -1,12 +1,26 @@
 import React, { Component } from 'react'
 import reactCSS from 'reactcss'
+import ColorPicker from './colorPicker'
 import { ChromePicker } from 'react-color'
 
 class Form extends Component {
 
-    formToJson = () => {
-        console.log("yep")
+    state = {
+        displayColorPicker: false,
+        colorPrimary: {
+            r: '16',
+            g: '1',
+            b: '1',
+            a: '1',
+        },
+        colorSecondary: {
+            r: '106',
+            g: '21',
+            b: '1',
+            a: '1',
+        },
     }
+
 
     render() {
 
@@ -92,17 +106,28 @@ class Form extends Component {
             displayColorPicker5,
         } = this.props
 
+
         return (
-
             <form>
-
                 <div className="form-group col-md-5">
-
                     <div className="column">
-                        <div>
-                            <label>Font:</label>
-                            <input name='name' className="form-control" type="text" />
-                        </div>
+
+                        <ColorPicker
+                            name={'primaryColor'}
+                            label={'Primary color:'}
+                            color={this.state.colorPrimary}
+                            handleColorChange={(color) => this.setState({ colorPrimary: color.rgb })}
+                            displayColorPicker={this.state.displayColorPicker}
+                        />
+
+                        <ColorPicker
+                            name={'secondaryColor'}
+                            label={'Secondary color:'}
+                            color={this.state.colorSecondary}
+                            handleColorChange={(color) => this.setState({ colorSecondary: color.rgb })}
+                            displayColorPicker={this.state.displayColorPicker}
+                        />
+
 
                         <div>
                             <label>Primary color:</label>
@@ -113,7 +138,6 @@ class Form extends Component {
                                 <div style={styles.cover} onClick={handleClose} />
                                 <ChromePicker color={colorPrimary} onChange={changePrimaryColor} />
                             </div>}
-
                         </div>
 
                         <div>
@@ -136,10 +160,10 @@ class Form extends Component {
                             <div className="form-control" style={styles.swatch} onClick={openHandlerPrimary}>
                                 <div style={styles.colorHandlerPrimary} />
                             </div>
-                            {displayColorPicker3 ? <div style={styles.popover}>
+                            {displayColorPicker3 && <div style={styles.popover}>
                                 <div style={styles.cover} onClick={handleClose} />
                                 <ChromePicker color={colorHandlerPrimary} onChange={changeHandlerPrimary} />
-                            </div> : null}
+                            </div>}
                         </div>
 
                         <div>
@@ -147,10 +171,10 @@ class Form extends Component {
                             <div className="form-control" style={styles.swatch} onClick={openHandlerSecondary}>
                                 <div style={styles.colorHandlerSecondary} />
                             </div>
-                            {displayColorPicker4 ? <div style={styles.popover}>
+                            {displayColorPicker4 && <div style={styles.popover}>
                                 <div style={styles.cover} onClick={handleClose} />
                                 <ChromePicker color={colorHandlerSecondary} onChange={changeHandlerSecondary} />
-                            </div> : null}
+                            </div>}
                         </div>
 
                         <div>
@@ -158,10 +182,10 @@ class Form extends Component {
                             <div className="form-control" style={styles.swatch} onClick={openComponent}>
                                 <div style={styles.colorComponent} />
                             </div>
-                            {displayColorPicker5 ? <div style={styles.popover}>
+                            {displayColorPicker5 && <div style={styles.popover}>
                                 <div style={styles.cover} onClick={handleClose} />
                                 <ChromePicker color={colorComponent} onChange={changeComponent} />
-                            </div> : null}
+                            </div>}
                         </div>
                     </div>
                 </div>

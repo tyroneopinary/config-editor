@@ -25,9 +25,9 @@ class Preview extends Component {
 
         return (
             
-            <div className="outer-container col-md-8">
+            <div className="outer-container col-md-10">
             
-                <div className="preview-container-outer">Pre-Vote
+                <div className="preview-container-outer col-md-5">Pre-Vote
                     <div className="preview-container-inner">
                         <div className="heading" style={{marginBottom: "20px"}}>
                             <div className="question" style={styles.colorPrimary}>Sample Question?</div>
@@ -65,7 +65,7 @@ class Preview extends Component {
                     </div>
                 </div>
 
-                <div className="preview-container-outer">Post-Vote
+                <div className="preview-container-outer col-md-5">Post-Vote
                     <div className="preview-container-inner">
                         <div className="heading">
                             <div className="question" style={styles.colorPrimary}>Sample Question?</div>
