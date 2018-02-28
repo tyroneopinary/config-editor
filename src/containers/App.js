@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import '../styles/App.css'
-import Form from '../components/Form'
+import Form from './Form'
 import Preview from '../components/Preview'
+
+import '../styles/App.css'
+
 
 class App extends Component {
 
@@ -35,42 +37,12 @@ class App extends Component {
       g: '216',
       b: '216',
       a: '1',
-    },
-    displayColorPicker1: false,
-    displayColorPicker2: false,
-    displayColorPicker3: false,
-    displayColorPicker4: false,
-    displayColorPicker5: false,
+    }
   }
-
-  openPrimary = (event) => {
-    this.setState({
-      // displayColorPicker1: !this.state[name]
-      displayColorPicker1: true
-
-    })
-  }
-
-
-  handleClose = () => {
-    this.setState({
-      displayColorPicker1: false,
-      displayColorPicker2: false,
-      displayColorPicker3: false,
-      displayColorPicker4: false,
-      displayColorPicker5: false
-    })
-  }
-
 
   render() {
 
     const { 
-      displayColorPicker1, 
-      displayColorPicker2, 
-      displayColorPicker3, 
-      displayColorPicker4, 
-      displayColorPicker5, 
       colorPrimary, 
       colorOpinion, 
       colorHandlerPrimary, 
@@ -83,18 +55,6 @@ class App extends Component {
         <div className="app-title">Editor Config</div>
 
         <Form
-          openPrimary={this.openPrimary}
-          openOpinion={this.openOpinion}
-          openHandlerPrimary={this.openHandlerPrimary}
-          openHandlerSecondary={this.openHandlerSecondary}
-          openComponent={this.openComponent}
-
-          displayColorPicker1={displayColorPicker1}
-          displayColorPicker2={displayColorPicker2}
-          displayColorPicker3={displayColorPicker3}
-          displayColorPicker4={displayColorPicker4}
-          displayColorPicker5={displayColorPicker5}
-
           colorPrimary={colorPrimary}
           colorOpinion={colorOpinion}
           colorHandlerPrimary={colorHandlerPrimary}
@@ -106,8 +66,6 @@ class App extends Component {
           changeHandlerPrimary={(color) => this.setState({ colorHandlerPrimary: color.rgb })}
           changeHandlerSecondary={(color) => this.setState({ colorHandlerSecondary: color.rgb })}
           changeComponent={(color) => this.setState({ colorComponent: color.rgb })}
-
-          handleClose={this.handleClose}
         />
 
         <Preview
