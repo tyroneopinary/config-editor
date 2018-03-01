@@ -24,28 +24,37 @@ class App extends Component {
   }
 
   formToJSON = () => {
-    const obj = {
+
+    // this.setState({
+    //   file,
+    //   path
+    // })
+  }
+
+  render() {
+
+    const {
+      colorPrimary,
+      colorOpinion,
+      colorHandlerPrimary,
+      colorHandlerSecondary,
+      colorComponent
+    } = this.state
+
+    const obj = JSON.stringify({
       primary: this.state.colorPrimary,
       opinion: this.state.colorOpinion,
       handlerPrimary: this.state.colorHandlerPrimary,
       handlerSecondary: this.state.colorHandlerSecondary,
       component: this.state.colorComponent
-    }
+    })
 
-    console.log(JSON.stringify(obj))
-  }
+    const file = new Blob([obj], { type: 'text/json' })
+    const path = URL.createObjectURL(file)
 
-  render() {
-
-    const { 
-      colorPrimary, 
-      colorOpinion, 
-      colorHandlerPrimary, 
-      colorHandlerSecondary, 
-      colorComponent 
-    } = this.state
 
     return (
+
       <div className="App">
         <div className="app-title">Editor Config</div>
 
@@ -72,7 +81,7 @@ class App extends Component {
         />
 
         <div className="button-container">
-          <button className="btn btn-save" onClick={this.formToJSON}>Save</button>
+          <a className="btn btn-save" href={path} download='tyroneisawesomeguy.json' >Dowload</a>
         </div>
 
       </div>
