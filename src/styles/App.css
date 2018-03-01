@@ -15,12 +15,33 @@
   position: relative;
 }
 
+.button-container {
+  padding: 40px;
+}
+
+.btn-save {
+  width: 150px;
+  background-color: white;
+  border-radius: 100px;
+  border: 1px solid black;
+}
+
+.btn-save:hover {
+  color: white;
+  background-color: black;
+  border: 1px solid #606060;
+}
+
 .form-group{
   display: inline-flex;
 }
 
 .form-control {
   line-height: 0 !important;
+}
+
+.question{
+  font-size: 2.5vh
 }
 
 label {
@@ -47,11 +68,11 @@ label {
 .answers{
   display: inline-flex;
   width: 100%;
-  font-size: 85%;
 }
 
 .answer-left, .answer-right {
-  width: 50%
+  width: 50%;
+  font-size: 2.1vh;
 }
 
 .answer-left {
@@ -64,8 +85,7 @@ label {
 
 .votes{
   float: right;
-  margin-top: 20px;
-  font-size: 75%;
+  font-size: 1.8vh;
 }
 
 .outer-container {
@@ -88,8 +108,12 @@ label {
   padding: 1% 0;
 }
 
+.tooltip-heading {
+  font-size: 2.2vh
+}
+
 .tooltip-subheading {
-  font-size: 85%;
+  font-size: 2vh;
 }
 
 .post-vote-needle {
@@ -98,5 +122,5 @@ label {
 }
 
 .post-vote-sub-question{
-  font-size: 85%;
+  font-size: 2vh;
 }

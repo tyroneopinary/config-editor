@@ -71,7 +71,9 @@ class App extends Component {
           colorComponent={colorComponent}
         />
 
-        <button onClick={this.formToJSON}>Save</button>
+        <div className="button-container">
+          <button className="btn btn-save" onClick={this.formToJSON}>Save</button>
+        </div>
 
       </div>
     )
